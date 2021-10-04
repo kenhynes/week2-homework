@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>  
+
+        Body {
+            Display: Flex;
+            width:  100vw;
+            justify-content: center;
+        }
+    
+        #window {
+            display: Flex;
+            align-items: center;
+            border: solid 5px black;
+            width: 500px;
+            height: 500px;
+            overflow: hidden;
+        }
+        #imgslider {
+            display: flex;
+            animation: carousel 20s infinite; 
+
+        }
+    
+        @keyframes carousel {
+            from {
+                transform: translateX(0);
+            }
+            
+            to {
+                transform: translateX(-2000px);
+            }
+        }
+               
+    
+    </style>
+</head>
+<body>
+
+    <div id="window">
+        <div id="imgslider">
+            <img src="./Images/rugby 5.jpg" alt="" srcset="" width="500px"  height="500px">
+            <img src="./Images/rugby 3.jpg" alt="" srcset="" width="500px"  height="500px">
+            <img src="./Images/rugby 2.jpg" alt="" srcset="" width="500px"  height="500px">
+            <img src="./Images/rugby 1.jpg" alt="" srcset="" width="500px"  height="500px">
+            <img src="./Images/rugby 4.jpg" alt="" srcset="" width="500px"  height="500px">
+
+
+                        
+        </div>
+            
+        
+        
+        
+    </div>
+    
+</body>
+</html>
