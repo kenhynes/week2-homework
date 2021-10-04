@@ -8,9 +8,11 @@
     <style>  
 
         Body {
-            Display: Flex;
+            display: flex ;
+            flex-direction: column;
             width:  100vw;
-            justify-content: center;
+            justify-content: center; 
+
         }
     
         #window {
@@ -59,5 +61,91 @@
         
     </div>
     
+    <button id="leftButton"> Left </button>
+    <div id="container">
+        <img id="imageHolder" alt="Error image">
+
+    </div>
+    <button id="rightButton"> Right </button> 
+
+    
 </body>
+<style>
+    Body{
+        background-color: black;
+        display: flex;
+        justify-content: center;
+    }
+
+    #container {
+        flex-direction: row;
+        height: 500px;
+        width: 500px;
+        background-color: grey;
+    }
+    #imageHolder {
+        flex-direction: row;
+        height: 100%;
+        width: 100%;
+    }
+
+</style>
+<script>
+    document.addEventListener("DOMContentLoaded", function(){  
+        var imageArray = [
+            "https://images.theconversation.com/files/347919/original/file-20200716-17-179wc7x.jpg?ixlib=rb-1.1.0&rect=7%2C7%2C4798%2C3249&q=45&auto=format&w=926&fit=clip",
+            "https://i.ytimg.com/vi/TDl97FPuaAc/maxresdefault.jpg",
+            "./Images/rugby 4.jpg",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvCPnoYC7PC6-tiRkNgt1B0LUJoNO_T_AbDQ&usqp=CAU",
+            "https://static01.nyt.com/images/2019/09/19/multimedia/19sp-shorties-inyt-1/19sp-shorties-inyt-1-videoSixteenByNineJumbo1600.jpg",
+                
+        ];
+
+        var imageArrayIndex = 0;
+         
+        var leftButton = document.querySelector("#leftButton");
+        var rightButton = document.querySelector("#rightButton");
+        var imageHolder = document.getElementById("imageHolder");
+
+        //src = imageArray[0]
+        imageHolder.src = imageArray[imageArrayIndex];
+
+        rightButton.addEventListener('click', function(){
+            if(imageArrayIndex < imageArray.length - 1){
+                imageArrayIndex++; //increment 0 to 1
+                imageHolder.src = imageArray[imageArrayIndex]; // src = imageArray[1]
+            }
+            else{
+                console.log("Out of Bounds on right button!")
+            }
+        })
+        
+
+        leftButton.addEventListener('click', function(){
+            if(imageArrayIndex > 0 ){
+                imageArrayIndex--; //increment 0 to 1
+                imageHolder.src = imageArray[imageArrayIndex]; // src = imageArray[1]
+            }
+            else{
+                console.log("Out of Bounds on right button!")
+            }
+        })
+
+        /*leftButton.addEventListener('click', function(){
+            if(imageArrayIndex > 0 ){
+                imageArrayIndex--; //increment 1 to 0
+                imageHolder.src = imageArray[imageArrayIndex]; // src = imageArray[0]
+            }
+            else{
+                console.log("Out of Bounds on left button!")
+
+            }
+        }) */
+        
+        
+        
+        
+    })
+    
+</script>
 </html>
